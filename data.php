@@ -1,12 +1,12 @@
 <?php
-$connection = pg_connect("host='localhost' port='5432' user='postgres' password='postgres' dbname='tubesgis'");
+$connection = pg_connect("host='localhost' port='5432' user='postgres' password='postgres' dbname='tbprakgis'");
 
 $sql = "SELECT
           gid,
           id_banguna,
           nama_bangu,
           alamat,
-          
+          geom,
           ST_AsGeoJSON(geom) AS geometry,
           ST_Y(ST_CENTROID(geom)) AS lat,
           ST_X(ST_CENTROID(geom)) AS lng
@@ -25,8 +25,9 @@ while ($row = pg_fetch_assoc($query)) {
         'properties' => array(
             'gid' => $row['gid'],
             'id_banguna' => $row['id_banguna'],
-            'nama_bangu' => $row['  nama_bangu'],
+            'nama_bangu' => $row['nama_bangu'],
             'alamat' => $row['alamat'],
+            'geom' => $row['geom'],
             'center' => array(
                 'lat' => $row['lat'],
                 'lng' => $row['lng']

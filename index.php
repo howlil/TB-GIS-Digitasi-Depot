@@ -65,15 +65,7 @@
                 <div class="my-5 fw-bold fs-2 text-center" id="header">Digitasi Depot Air Kelompok 3</div>
                 <div class="rounded" style="width: 80%; height: 500px; margin:0px auto;  border-style:ridge" id="map">
                 </div>
-                <!-- <div class="row mt-3">
-                    <div class=" col col-md-6" style="width: 50%; height: 500px; float:left; border-style:ridge"
-                        id="map">
-                    </div>
 
-                    <div class=" col col-md-6" style="width: 50%; min-height: 500px; float:left; border-style:ridge">
-                        info windows detail
-                    </div>
-                </div> -->
             </div>
             <div class=" my-5" id="anggota">
                 <h2 class="text-center">
@@ -177,489 +169,12 @@
         <h5 class="text-white text-center fs-6 fw-normal">&copy; 2023 Kelompok 3 Kelas B. Tugas Besar Praktikum GIS.
         </h5>
     </Footer>
-    <!-- <script>
-    var map;
-    var show_digitation;
-    var infoWindow;
-
-    function initMap() {
-        var uluru = {
-            lat: -0.92923,
-            lng: 100.38289
-
-        };
-        map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 15,
-            center: uluru
-        });
-        var uluru1 = {
-            lat: -0.92938,
-            lng: 100.38785
-
-        };
-        map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 15,
-            center: uluru1
-        });
-        var uluru2 = {
-            lat: -0.93152,
-            lng: 100.38918
-
-        };
-        map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 15,
-            center: uluru2
-        });
-        var uluru3 = {
-            lat: -0.93267,
-            lng: 100.38775
-        };
-        map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 15,
-            center: uluru3
-        });
-        var uluru4 = {
-            lat: -0.93232,
-            lng: 100.38738
-
-        };
-        map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 15,
-            center: uluru4
-        });
-        var uluru5 = {
-            lat: -0.93518,
-            lng: 100.38849
-
-
-        };
-        map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 15,
-            center: uluru5
-        });
-        var uluru6 = {
-            lat: -0.93535,
-            lng: 100.39344
-
-
-        };
-        map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 15,
-            center: uluru6
-        });
-        var uluru7 = {
-            lat: -0.93519,
-            lng: 100.39555
-
-
-        };
-        map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 15,
-            center: uluru7
-        });
-
-
-
-        // Membuat InfoWindow untuk peta
-        infoWindow = new google.maps.InfoWindow({
-            map: map
-        });
-
-        // Panggil fungsi untuk menampilkan digitasi
-        showDigitasi(infoWindow);
-
-        // Kodingan Geolokasi
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(function(position) {
-                    var pos = {
-                        lat: position.coords.latitude,
-                        lng: position.coords.longitude
-                    };
-
-                    // Menambahkan marker geolokasi pada peta
-                    var marker = new google.maps.Marker({
-                        position: pos,
-                        map: map,
-                        title: 'Lokasi Saya',
-                        icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png',
-                        draggable: true,
-                        animation: google.maps.Animation.DROP
-                    });
-
-                    var marker1 = new google.maps.Marker({
-                        position: uluru,
-                        map: map,
-                        title: 'Depot Air Minum Bening ',
-                        icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png',
-                        draggable: true,
-                        animation: google.maps.Animation.DROP
-
-                    });
-                    var marker2 = new google.maps.Marker({
-                        position: uluru1,
-                        map: map,
-                        title: 'Surya Depot Air',
-                        icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png',
-                        draggable: true,
-                        animation: google.maps.Animation.DROP
-
-                    });
-                    var marker3 = new google.maps.Marker({
-                        position: uluru2,
-                        map: map,
-                        title: 'Rj.Mineral (DepotAir Minum Isi Ulang)',
-                        icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png',
-                        draggable: true,
-                        animation: google.maps.Animation.DROP
-
-                    });
-                    var marker4 = new google.maps.Marker({
-                        position: uluru3,
-                        map: map,
-                        title: 'Depot Air Minum Aisha                         ',
-                        icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png',
-                        draggable: true,
-                        animation: google.maps.Animation.DROP
-
-                    });
-                    var marker5 = new google.maps.Marker({
-                        position: uluru4,
-                        map: map,
-                        title: 'Depot Air Minum Mineral Edelweiss',
-                        icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png',
-                        draggable: true,
-                        animation: google.maps.Animation.DROP
-
-                    });
-                    var marker6 = new google.maps.Marker({
-                        position: uluru5,
-                        map: map,
-                        title: 'Depot Luthfi                         ',
-                        icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png',
-                        draggable: true,
-                        animation: google.maps.Animation.DROP
-
-                    });
-                    var marker7 = new google.maps.Marker({
-                        position: uluru6,
-                        map: map,
-                        title: 'Depot Riyani                         ',
-                        icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png',
-                        draggable: true,
-                        animation: google.maps.Animation.DROP
-
-                    });
-                    var marker8 = new google.maps.Marker({
-                        position: uluru7,
-                        map: map,
-                        title: 'Depot Air Minum Diru Water',
-                        icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png',
-                        draggable: true,
-                        animation: google.maps.Animation.DROP
-
-                    });
-
-                    // Menambahkan event listener untuk marker geolokasi
-                    marker.addListener('click', toggleBounce);
-
-                    function toggleBounce() {
-                        if (marker.getAnimation() !== null) {
-                            marker.setAnimation(null);
-                        } else {
-                            marker.setAnimation(google.maps.Animation.BOUNCE);
-                        }
-                    }
-
-                    // Menampilkan InfoWindow pada lokasi geolokasi
-                    infoWindow.setPosition(pos);
-                    infoWindow.setContent('Kamu Disini');
-                    map.setCenter(pos);
-                },
-                function() {
-                    handleLocationError(true, infoWindow, map.getCenter());
-                });
-        } else {
-            // Jika browser tidak mendukung geolokasi
-            handleLocationError(false, infoWindow, map.getCenter());
-        }
-    }
-    // Fungsi untuk menampilkan digitasi
-    function showDigitasi(infoWindow) {
-        // Menggunakan AJAX untuk mengambil data digitasi dari 'data.php'
-        $.ajax({
-            url: 'data.php',
-            dataType: 'json',
-            cache: false,
-            success: function(arrays) {
-
-                for (i = 0; i < arrays.features.length; i++) {
-                    var data = arrays.features[i];
-                    var arrayGeometries = data.geometry.coordinates;
-                    var p1 = '<p> id_banguna : ' + data.properties.id_banguna + '</p>';
-                    var p2 = p1 + ' &nbsp ';
-                    var p3 = '<p> nama_bangu : ' + data.properties.nama_bangu + '</p>';
-                    var p4 = p3 + ' &nbsp ';
-
-                    var idTitik = 0;
-                    var hitungTitik = [];
-                    while (idTitik < arrayGeometries[0][0].length) {
-                        var aa = arrayGeometries[0][0][idTitik][0];
-                        var bb = arrayGeometries[0][0][idTitik][1];
-                        hitungTitik[idTitik] = {
-                            lat: bb,
-                            lng: aa
-                        };
-                        idTitik += 1;
-                    }
-
-                    // Membuat poligon dan menambahkannya ke peta
-                    show_digitation = new google.maps.Polygon({
-                        paths: hitungTitik,
-                        strokeColor: 'red',
-                        strokeOpacity: 1,
-                        strokeWeight: 0.5,
-                        fillColor: 'red',
-                        fillOpacity: 0.55,
-                    });
-
-                    // Menambahkan atribut data-content ke objek show_digitation
-                    show_digitation.set("data-content", p4);
-                    show_digitation.setMap(map);
-
-                    // Menambahkan event listener untuk menampilkan InfoWindow saat diklik
-                    show_digitation.addListener('click', function(event) {
-                        var lat = event.latLng.lat();
-                        var lng = event.latLng.lng();
-                        var info = {
-                            lat: lat,
-                            lng: lng
-                        };
-                        var content = this.get(
-                            "data-content"); // Mengambil konten dari atribut data-content
-                        infoWindow.setContent(content);
-                        infoWindow.setPosition(info);
-                        map.setCenter(info);
-                        infoWindow.open(map);
-                    });
-                }
-            }
-
-        });
-    }
-    // Menangani kesalahan geolokasi
-    function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-        infoWindow.setPosition(pos);
-        infoWindow.setContent('Kesalahan Layanan geolokasi.' + 'Error:<i>Browser</i> anda tidak mendukung geolokasi.');
-    }
-    </script> -->
     <script>
     var map;
     var show_digitation;
     var infoWindow;
 
-    function initMap() {
-        var uluru = {
-            lat: -0.92923,
-            lng: 100.38289
 
-        };
-        map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 15,
-            center: uluru
-        });
-        var uluru1 = {
-            lat: -0.92938,
-            lng: 100.38785
-
-        };
-        map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 15,
-            center: uluru1
-        });
-        var uluru2 = {
-            lat: -0.93152,
-            lng: 100.38918
-
-        };
-        map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 15,
-            center: uluru2
-        });
-        var uluru3 = {
-            lat: -0.93267,
-            lng: 100.38775
-        };
-        map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 15,
-            center: uluru3
-        });
-        var uluru4 = {
-            lat: -0.93232,
-            lng: 100.38738
-
-        };
-        map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 15,
-            center: uluru4
-        });
-        var uluru5 = {
-            lat: -0.93518,
-            lng: 100.38849
-
-
-        };
-        map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 15,
-            center: uluru5
-        });
-        var uluru6 = {
-            lat: -0.93535,
-            lng: 100.39344
-
-
-        };
-        map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 15,
-            center: uluru6
-        });
-        var uluru7 = {
-            lat: -0.93519,
-            lng: 100.39555
-
-
-        };
-        map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 15,
-            center: uluru7
-        });
-
-
-
-        // Membuat InfoWindow untuk peta
-        infoWindow = new google.maps.InfoWindow({
-            map: map
-        });
-
-        // Panggil fungsi untuk menampilkan digitasi
-        showDigitasi(infoWindow);
-
-        // Kodingan Geolokasi
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(function(position) {
-                    var pos = {
-                        lat: position.coords.latitude,
-                        lng: position.coords.longitude
-                    };
-
-                    // Menambahkan marker geolokasi pada peta
-                    var marker = new google.maps.Marker({
-                        position: pos,
-                        map: map,
-                        title: 'Lokasi Saya',
-                        icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png',
-                        draggable: true,
-                        animation: google.maps.Animation.DROP
-                    });
-
-                    var marker1 = new google.maps.Marker({
-                        position: uluru,
-                        map: map,
-                        title: 'Depot Air Minum Bening ',
-                        icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png',
-                        draggable: true,
-                        animation: google.maps.Animation.DROP
-
-                    });
-                    var marker2 = new google.maps.Marker({
-                        position: uluru1,
-                        map: map,
-                        title: 'Surya Depot Air',
-                        icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png',
-                        draggable: true,
-                        animation: google.maps.Animation.DROP
-
-                    });
-                    var marker3 = new google.maps.Marker({
-                        position: uluru2,
-                        map: map,
-                        title: 'Rj.Mineral (DepotAir Minum Isi Ulang)',
-                        icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png',
-                        draggable: true,
-                        animation: google.maps.Animation.DROP
-
-                    });
-                    var marker4 = new google.maps.Marker({
-                        position: uluru3,
-                        map: map,
-                        title: 'Depot Air Minum Aisha                         ',
-                        icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png',
-                        draggable: true,
-                        animation: google.maps.Animation.DROP
-
-                    });
-                    var marker5 = new google.maps.Marker({
-                        position: uluru4,
-                        map: map,
-                        title: 'Depot Air Minum Mineral Edelweiss',
-                        icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png',
-                        draggable: true,
-                        animation: google.maps.Animation.DROP
-
-                    });
-                    var marker6 = new google.maps.Marker({
-                        position: uluru5,
-                        map: map,
-                        title: 'Depot Luthfi                         ',
-                        icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png',
-                        draggable: true,
-                        animation: google.maps.Animation.DROP
-
-                    });
-                    var marker7 = new google.maps.Marker({
-                        position: uluru6,
-                        map: map,
-                        title: 'Depot Riyani                         ',
-                        icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png',
-                        draggable: true,
-                        animation: google.maps.Animation.DROP
-
-                    });
-                    var marker8 = new google.maps.Marker({
-                        position: uluru7,
-                        map: map,
-                        title: 'Depot Air Minum Diru Water',
-                        icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png',
-                        draggable: true,
-                        animation: google.maps.Animation.DROP
-
-                    });
-
-                    // Menambahkan event listener untuk marker geolokasi
-                    marker.addListener('click', toggleBounce);
-
-                    function toggleBounce() {
-                        if (marker.getAnimation() !== null) {
-                            marker.setAnimation(null);
-                        } else {
-                            marker.setAnimation(google.maps.Animation.BOUNCE);
-                        }
-                    }
-
-                    // Menampilkan InfoWindow pada lokasi geolokasi
-                    infoWindow.setPosition(pos);
-                    infoWindow.setContent('Kamu Disini');
-                    map.setCenter(pos);
-                },
-                function() {
-                    handleLocationError(true, infoWindow, map.getCenter());
-                });
-        } else {
-            // Jika browser tidak mendukung geolokasi
-            handleLocationError(false, infoWindow, map.getCenter());
-        }
-    }
-
-    /*----------------------------------------------------------------------------------------------------------------------------------*/
     // Fungsi untuk menampilkan digitasi
     function showDigitasi(infoWindow) {
         // Menggunakan AJAX untuk mengambil data digitasi dari 'data.php'
@@ -668,14 +183,16 @@
             dataType: 'json',
             cache: false,
             success: function(arrays) {
+
                 for (i = 0; i < arrays.features.length; i++) {
                     var data = arrays.features[i];
                     var arrayGeometries = data.geometry.coordinates;
+                    var p3 = '<p> gid: ' + data.properties.gid + '</p>';
                     var p1 = '<p> id_banguna: ' + data.properties.id_banguna + '</p>';
                     var p12 = '<p> nama_bangu: ' + data.properties.nama_bangu + '</p>';
                     var p14 = '<p> alamat: ' + data.properties.alamat + '</p>';
-                    var p2 = p1 + p12 + p14;
-                    // var p2 = p1 + ' &nbsp ' +p12;
+                    var p15 = '<p> geom: ' + data.properties.geom + '</p>';
+                    var p2 = p3 + p1 + p12 + p14 + p15;
 
 
                     var idTitik = 0;
@@ -693,11 +210,12 @@
                     // Membuat poligon dan menambahkannya ke peta
                     show_digitation = new google.maps.Polygon({
                         paths: hitungTitik,
-                        strokeColor: 'red',
+                        strokeColor: 'green',
                         strokeOpacity: 1,
                         strokeWeight: 0.5,
-                        fillColor: 'green',
-                        fillOpacity: 0.35,
+                        fillColor: 'red',
+                        fillOpacity: 1,
+                        content: p2
                     });
 
                     // Menambahkan atribut data-content ke objek show_digitation
@@ -714,22 +232,225 @@
                         };
                         var content = this.get(
                             "data-content"); // Mengambil konten dari atribut data-content
-                        infoWindow.setContent(content);
+                        infoWindow.setContent(this.content);
                         infoWindow.setPosition(info);
                         map.setCenter(info);
                         infoWindow.open(map);
                     });
                 }
             }
+
         });
     }
-    /*----------------------------------------------------------------------------------------------------------------------------------*/
+
+    function initMap() {
+        var uluru = {
+            lat: -0.92923,
+            lng: 100.38289
+
+        };
+        map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 15,
+            center: uluru
+        });
+        var uluru1 = {
+            lat: -0.92938,
+            lng: 100.38785
+
+        };
+        map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 15,
+            center: uluru1
+        });
+        var uluru2 = {
+            lat: -0.93152,
+            lng: 100.38918
+
+        };
+        map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 15,
+            center: uluru2
+        });
+        var uluru3 = {
+            lat: -0.93267,
+            lng: 100.38775
+        };
+        map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 15,
+            center: uluru3
+        });
+        var uluru4 = {
+            lat: -0.93232,
+            lng: 100.38738
+
+        };
+        map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 15,
+            center: uluru4
+        });
+        var uluru5 = {
+            lat: -0.93518,
+            lng: 100.38849
+
+
+        };
+        map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 15,
+            center: uluru5
+        });
+        var uluru6 = {
+            lat: -0.93535,
+            lng: 100.39344
+
+
+        };
+        map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 15,
+            center: uluru6
+        });
+        var uluru7 = {
+            lat: -0.93519,
+            lng: 100.39555
+
+
+        };
+        map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 15,
+            center: uluru7
+        });
+
+
+
+        // Membuat InfoWindow untuk peta
+        infoWindow = new google.maps.InfoWindow({
+            map: map
+        });
+
+        // Panggil fungsi untuk menampilkan digitasi
+        showDigitasi(infoWindow);
+
+        // Kodingan Geolokasi
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function(position) {
+                    var pos = {
+                        lat: position.coords.latitude,
+                        lng: position.coords.longitude
+                    };
+
+                    // Menambahkan marker geolokasi pada peta
+                    var marker = new google.maps.Marker({
+                        position: pos,
+                        map: map,
+                        title: 'Lokasi Saya',
+                        icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png',
+                        draggable: true,
+                        animation: google.maps.Animation.DROP
+                    });
+
+                    var marker1 = new google.maps.Marker({
+                        position: uluru,
+                        map: map,
+                        title: 'Depot Air Minum Bening ',
+                        icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png',
+                        draggable: true,
+                        animation: google.maps.Animation.DROP
+
+                    });
+                    var marker2 = new google.maps.Marker({
+                        position: uluru1,
+                        map: map,
+                        title: 'Surya Depot Air',
+                        icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png',
+                        draggable: true,
+                        animation: google.maps.Animation.DROP
+
+                    });
+                    var marker3 = new google.maps.Marker({
+                        position: uluru2,
+                        map: map,
+                        title: 'Rj.Mineral (DepotAir Minum Isi Ulang)',
+                        icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png',
+                        draggable: true,
+                        animation: google.maps.Animation.DROP
+
+                    });
+                    var marker4 = new google.maps.Marker({
+                        position: uluru3,
+                        map: map,
+                        title: 'Depot Air Minum Aisha                         ',
+                        icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png',
+                        draggable: true,
+                        animation: google.maps.Animation.DROP
+
+                    });
+                    var marker5 = new google.maps.Marker({
+                        position: uluru4,
+                        map: map,
+                        title: 'Depot Air Minum Mineral Edelweiss',
+                        icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png',
+                        draggable: true,
+                        animation: google.maps.Animation.DROP
+
+                    });
+                    var marker6 = new google.maps.Marker({
+                        position: uluru5,
+                        map: map,
+                        title: 'Depot Luthfi                         ',
+                        icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png',
+                        draggable: true,
+                        animation: google.maps.Animation.DROP
+
+                    });
+                    var marker7 = new google.maps.Marker({
+                        position: uluru6,
+                        map: map,
+                        title: 'Depot Riyani                         ',
+                        icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png',
+                        draggable: true,
+                        animation: google.maps.Animation.DROP
+
+                    });
+                    var marker8 = new google.maps.Marker({
+                        position: uluru7,
+                        map: map,
+                        title: 'Depot Air Minum Diru Water',
+                        icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png',
+                        draggable: true,
+                        animation: google.maps.Animation.DROP
+
+                    });
+
+                    // Menambahkan event listener untuk marker geolokasi
+                    marker.addListener('click', toggleBounce);
+
+                    function toggleBounce() {
+                        if (marker.getAnimation() !== null) {
+                            marker.setAnimation(null);
+                        } else {
+                            marker.setAnimation(google.maps.Animation.BOUNCE);
+                        }
+                    }
+
+                    // Menampilkan InfoWindow pada lokasi geolokasi
+                    infoWindow.setPosition(pos);
+                    infoWindow.setContent('Kamu Disini');
+                    map.setCenter(pos);
+                },
+                function() {
+                    handleLocationError(true, infoWindow, map.getCenter());
+                });
+        } else {
+            // Jika browser tidak mendukung geolokasi
+            handleLocationError(false, infoWindow, map.getCenter());
+        }
+    }
     // Menangani kesalahan geolokasi
     function handleLocationError(browserHasGeolocation, infoWindow, pos) {
         infoWindow.setPosition(pos);
         infoWindow.setContent('Kesalahan Layanan geolokasi.' + 'Error:<i>Browser</i> anda tidak mendukung geolokasi.');
     }
     </script>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
     </script>
